@@ -1,8 +1,13 @@
 const awsIot = require("aws-iot-device-sdk");
+require("dotenv").config(); // Load environment variables from .env file
+
 const private_key = process.env.PRIVATE_KEY;
 const certificado_dispo = process.env.CERTIFICADO_DISPO;
 const AmazonRootCA1 = process.env.AMAZON_ROOT_CA1;
 // Create a persistent IoT device connection
+console.log(private_key);
+console.log(certificado_dispo);
+console.log(AmazonRootCA1);
 const device = awsIot.device({
   clientId: "marco_esp32dht11",
   host: "a3todvehpsou32-ats.iot.us-east-2.amazonaws.com",
