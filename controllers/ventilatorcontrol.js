@@ -33,12 +33,12 @@ const sendData = (topic, IoTDevice2) => {
 const turnOnVentilator = async (req, res) => {
   const topic = "Sensor";
   //const topic = "home/helloworld";
-  const IoTDevice2 = "Ventilator on";
+  const IoTDevice2 = "Flow on";
   //const IoTDevice2 = { status: "luz on" };
 
   try {
     await sendData(topic, IoTDevice2);
-    res.json({ message: "Ventilator on" });
+    res.json({ message: "Flow on" });
   } catch (error) {
     console.error("Error sending data to AWS IoT Core:", error);
     res.status(500).json({ message: "Error sending data to IoT device" });
@@ -49,12 +49,12 @@ const turnOnVentilator = async (req, res) => {
 const turnOffVentilator = async (req, res) => {
   const topic = "Sensor";
   //const topic = "home/helloworld";
-  const IoTDevice2 = "Ventilator off";
+  const IoTDevice2 = "Flow off";
   //const IoTDevice2 = { status: "luz off" };
 
   try {
     await sendData(topic, IoTDevice2);
-    res.json({ message: "Ventilator off" });
+    res.json({ message: "Flow off" });
   } catch (error) {
     console.error("Error sending data to AWS IoT Core:", error);
     res.status(500).json({ message: "Error sending data to IoT device" });
